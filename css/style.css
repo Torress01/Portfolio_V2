@@ -52,7 +52,7 @@ header{
 }
 
 .logo{
-    color: var(--text-color);
+    color: var(--second-color);
     font-size: 35px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -63,6 +63,10 @@ header{
 }
 
 .navlist{
+    display: none;
+}
+
+.navlist.open{
     display: flex;
 }
 
@@ -71,7 +75,6 @@ header{
     font-size: 19px;
     font-weight: 500;
     margin: 0 25px;
-    transition: all .45s ease;
 }
 
 .navlist a:hover{
@@ -83,12 +86,11 @@ header{
 }
 
 #menu-icon{
-    font-size: 35px;
+    font-size: 30px;
     color: var(--text-color);
     z-index: 10001;
     cursor: pointer;
     margin-left: 25px;
-    display: none;
 }
 
 /* Home section style */
@@ -164,14 +166,17 @@ section{
 }
 
 .button{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1em;
+    left: 0;
+    display: flex;
+    flex-direction: column ;
+    align-items: left;
     margin-top: 40px;
+    gap: 20px;
+    /* background-color: red; */
 }
 
 .btn{
-    display: inline-block;
     padding: 12px 28px;
     background-color: var(--main-color);
     border-radius: 5px;
@@ -179,22 +184,24 @@ section{
     font-size: 1rem;
     letter-spacing: 1px;
     font-weight: 600;
-    transition: all .45s ease;
-}
-
-.btn:hover{
-    transform: scale(0.9);
+    transition: all 1s ease;
+    width: 250px;
 }
 
 .btn2{
-    font-size: 18px;
-    font-weight: 600;
+    padding: 12px 28px;
+    background-color: var(--main-color);
+    border-radius: 5px;
     color: var(--text-color);
-    margin-left: 35px;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: all 1s ease;
+    width: 300px;
 }
 
-.btn2:hover{
-    transform: scale(0.9);
+.btn:hover{
+    transform: scale(0.95);
 }
 
 /* About section style */
@@ -213,10 +220,10 @@ section{
     font-size: 15px;
     font-weight: 600;
     color: var(--text-color);
-    margin-right: 15px;
+    margin-top: 15px;
 }
 
-.btn-socials:nth-child(6){
+.btn-socials:nth-child(3){
     margin-right: 0px;
 }
 
@@ -279,6 +286,133 @@ header.sticky{
     margin-bottom: 0.5rem;
 }
 
+.experience{
+    background-color: var(--second-bg-color);
+}
+
+.timeline{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.container img{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 32px;
+    margin: 2rem;
+}
+
+.text-box{
+    padding: 20px 20px;
+    background: var(--bg-color);
+    border-radius: 10px;
+    color: var(--text-color);
+    width: 60vw;
+}
+
+.text-box h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.text-box small{
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.text-box p{
+    letter-spacing: 1px;
+    line-height: 1.8;
+    font-size: var(--p-font);
+    margin: 1rem 0;
+}
+
+.portfolio-content{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    align-items: center;
+    gap: 2.5rem;
+    margin-top: 5rem;
+}
+
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.row img{
+    max-width: 350px;
+    min-width: 100%;
+    min-height: 375px;
+    max-height: 375px;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.layer{
+    width: 100%;
+    height: 0%;
+    background: var(--main-color);
+    position: absolute;
+    border-radius: 10px;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+
+.layer h5{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.layer p{
+    color: var(--second-color);
+    font-size: var(--p-small-font);
+    line-height: 1.8;
+}
+
+.layer i{
+    color: var(--main-color);
+    margin-top: 20px;
+    font-size: 20px;
+    background: var(--text-color);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.row:hover img{
+    transform: scale(1.1);
+}
+
+.row:hover .layer{
+    height: 100%;
+}
+
 .services{
     background: var(--second-bg-color);
 }
@@ -335,89 +469,12 @@ header.sticky{
     transform: translateY(-8px);
 }
 
-.portfolio-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    align-items: center;
-    gap: 2.5rem;
-    margin-top: 5rem;
-}
-
-.row{
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.row img{
-    max-width: 350px;
-    min-width: 100%;
-    min-height: 375px;
-    max-height: 375px;
-    border-radius: 10px;
-    display: block;
-    transition: transform 0.5s;
-}
-
-.layer{
-    width: 100%;
-    height: 0%;
-    background: var(--main-color);
-    position: absolute;
-    border-radius: 10px;
-    left: 0;
-    bottom: 0;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    padding: 0 40px;
-    transition: height 0.5s;
-}
-
-.layer h5{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.layer p{
-    color: var(--second-color);
-    font-size: var(--p-small-font);
-    line-height: 1.8;
-}
-
-.layer i{
-    color: var(--main-color);
-    margin-top: 20px;
-    font-size: 20px;
-    background: var(--text-color);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-.row:hover img{
-    transform: scale(1.1);
-}
-
-.row:hover .layer{
-    height: 100%;
-}
-
 .end{
     letter-spacing: 1px;
-    text-align: center;
+    text-align: right;
     padding: 20px 15%;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     flex-direction: column;
     gap: 2rem;
     background-color: var(--bg-color);
@@ -447,61 +504,11 @@ header.sticky{
     padding: 10px;
     border-radius: 8px;
     font-size: 28px;
-    color: var(--text-color);
+    color: #fff;
     background: var(--main-color);
 }
 
-.experience{
-    background-color: var(--second-bg-color);
-}
-
-.timeline{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 3rem 0;
-}
-
-.container img{
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    top: 32px;
-    margin: 2rem;
-}
-
-.text-box{
-    padding: 20px 20px;
-    background: var(--bg-color);
-    border-radius: 10px;
-    color: var(--text-color);
-    width: 60vw;
-}
-
-.text-box h5{
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-.text-box small{
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.text-box p{
-    letter-spacing: 1px;
-    line-height: 1.8;
-    font-size: var(--p-font);
-    margin: 1rem 0;
-}
-
+/* Responsive design */
 @media (max-width: 1480px){
     header{
         padding: 12px 2.5%;

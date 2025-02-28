@@ -9,20 +9,17 @@ let navlist = document.querySelector(".navlist");
 
 menu.onclick = () => {
   navlist.classList.toggle("open");
-  if (window.scrollY < 90) {
-    header.classList.toggle("sticky");
-  }
 };
 
 window.onscroll = () => {
-  menu.classList.remove("bx-x");
-  navlist.classList.remove("open");
+  menu.classList.remove("bx-x"); // Remove a classe do menu
+  navlist.classList.remove("open"); // Esconde a navlist
 };
 
 const topo = document.getElementById("top");
 
 window.addEventListener("scroll", function () {
-  topo.classList.toggle("show-top", window.scrollY > 140);
+  topo.classList.toggle("show-top", window.scrollY > 200);
   topo.classList.toggle("hide-top", window.scrollY < 140);
 });
 
