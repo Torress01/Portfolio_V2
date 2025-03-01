@@ -369,7 +369,7 @@ header.sticky{
     position: absolute;
     border-radius: 10px;
     left: 0;
-    top: 0;
+    bottom: 0;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -393,10 +393,10 @@ header.sticky{
 }
 
 .layer i{
-    color: var(--main-color);
+    color: white;
     margin-top: 20px;
     font-size: 20px;
-    background: var(--text-color);
+    background: black;
     width: 60px;
     height: 60px;
     display: flex;
