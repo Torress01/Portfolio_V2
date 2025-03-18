@@ -10,7 +10,7 @@
 
 :root{
     --bg-color: #ececec;
-    --second-bg-color: #ffffff;
+    --second-bg-color: #e0e0e0;
     --text-color: #333333
     --second-color: rgb(0, 0, 0);
     --main-color: #007BFF;
@@ -286,6 +286,8 @@ header.sticky{
     margin-bottom: 0.5rem;
 }
 
+/* experience */
+
 .experience{
     background-color: var(--second-bg-color);
 }
@@ -303,10 +305,21 @@ header.sticky{
     margin: 3rem 0;
 }
 
+.arrow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow img{
+    width: 50px;
+    margin-left: 20px ;
+}
 .container img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
+    border: 2px dashed #000000;
     top: 32px;
     margin: 2rem;
 }
@@ -430,6 +443,7 @@ header.sticky{
 .main-text h2{
     font-size: var(--h2-font);
     line-height: 1;
+    margin-bottom: 20px;
 }
 
 .services-content{
