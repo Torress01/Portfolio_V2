@@ -315,11 +315,12 @@ header.sticky{
     width: 50px;
     margin-left: 20px ;
 }
+
 .container img{
-    width: 120px;
-    height: 120px;
+    width: 180px;
+    height: 180px;
     border-radius: 50%;
-    border: 2px dashed #000000;
+    border: 4px dashed rgb(49, 52, 57);
     top: 32px;
     margin: 2rem;
 }
